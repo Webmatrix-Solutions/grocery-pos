@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     })->name('manage-pos');
 
     Route::get('/manage-cashiers', function() {
-        return view('products.manage-cashiers');
+        return view('cashiers.add-cashier');
     })->name('manage-cashiers');
 });
 

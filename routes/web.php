@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
     })->name('add-new-product');
 
     Route::get('/manage-stocks', function() {
-        return view('products.manage-stocks');
+        return view('stocks.all-stocks');
     })->name('manage-stocks');
 
     Route::get('/manage-pos', function() {

@@ -1,10 +1,14 @@
 <!-- resources/views/products/create.blade.php -->
 <x-app-layout>
 
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Add New Product') }}
+        </h2>
+    </x-slot>
+
     <div class="min-h-screen bg-gray-900 px-6 py-12 lg:px-8">
         <div class="mx-auto max-w-xl">
-            
-            <h2 class="text-3xl font-bold text-white text-center mb-6">Add New Product</h2>
 
             <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg">
                 @csrf

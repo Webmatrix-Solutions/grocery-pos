@@ -10,7 +10,7 @@
     <div class="min-h-screen bg-gray-900 px-6 py-12 lg:px-8">
         <div class="mx-auto max-w-xl">
 
-            <form action="{{ url('/add-new-product') }}" method="POST" enctype="multipart/form-data" class="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <form id="addNewProductForm" method="POST" enctype="multipart/form-data" class="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg">
                 @csrf
 
                 <div>
@@ -47,6 +47,41 @@
         </div>
     </div>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            $form = document.getElementById('addNewProductForm');
+            $form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                fetch('/add-new-product', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        name: $form.name.value,
+                        price: $form.price.value,
+                        stock_quantity: $form.stock_quantity.value,
+                        category: $form.category.value,
+                        description: $form.description.value
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success) {
+                        alert('Product added successfully!');
+                    } else {
+                        alert('Error adding product: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
 
 
 </x-app-layout>

@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     })->name('manage-stocks');
 
     Route::get('/manage-pos', function() {
-        return view('products.manage-pos');
+        return view('pos.pos');
     })->name('manage-pos');
 
     Route::get('/manage-cashiers', function() {

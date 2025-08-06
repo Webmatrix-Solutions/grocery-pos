@@ -19,9 +19,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/add-new-product', function() {
-        return view('products.create-product');
-    })->name('add-new-product');
+
+    Route::get('/add-new-product', [\App\Http\Controllers\ProductsController::class, 'create'])->name('add-new-product');
+
+    Route::post('/add-new-product', [\App\Http\Controllers\ProductsController::class, 'storeNewProduct']);
 
     Route::get('/manage-stocks', function() {
         return view('stocks.all-stocks');

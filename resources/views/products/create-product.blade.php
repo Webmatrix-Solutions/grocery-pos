@@ -10,7 +10,7 @@
     <div class="min-h-screen bg-gray-900 px-6 py-12 lg:px-8">
         <div class="mx-auto max-w-xl">
 
-            <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <form action="{{ url('/add-new-product') }}" method="POST" enctype="multipart/form-data" class="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg">
                 @csrf
 
                 <div>

@@ -24,13 +24,11 @@
                 <h2 class="text-xl font-semibold mb-2 text-white">Total Sales</h2>
                 <p class="text-3xl font-bold text-white">$25,400</p>
             </div>
-
             <!-- Total Products -->
             <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
                 <h2 class="text-xl font-semibold mb-2 text-white">Total Products</h2>
                 <p class="text-3xl font-bold text-white">324</p>
             </div>
-
             <!-- Out of Stock Products -->
             <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
                 <h2 class="text-xl font-semibold mb-2 text-white">Out of Stock</h2>

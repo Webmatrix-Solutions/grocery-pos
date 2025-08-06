@@ -70,11 +70,12 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if(data.success) {
-                        alert('Product added successfully!');
-                    } else {
-                        alert('Error adding product: ' + data.message);
-                    }
+                   if(data.response === 201) {
+                       alert('Product added successfully!');
+                       $form.reset();
+                   } else {
+                       alert('Error adding product: ' + data.message);
+                   }
                 })
                 .catch(error => {
                     console.error('Error:', error);
